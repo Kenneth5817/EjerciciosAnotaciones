@@ -1,22 +1,15 @@
 package org.iesvdm.empresa;
 
-public class Directivo {
+public class Directivo extends Empleado {
+    private int codigoDespacho;
 
-    //Getters y Setters
-    public Integer getCodigoDespacho() {
-        return codigoDespacho;
-    }
-
-    public void setCodigoDespacho(Integer codigoDespacho) {
+    public Directivo(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoDespacho) {
+        super(nombre, apellidos, dni, direccion, Integer.valueOf(telefono));
         this.codigoDespacho = codigoDespacho;
     }
 
-    //Constructor
-    public Directivo(Integer codigoDespacho) {
-        this.codigoDespacho = codigoDespacho;
+    @Override
+    public String toString() {
+        return super.toString() + ", Código Despacho: " + codigoDespacho + " (Directivo)";
     }
-
-    //ATRIBUTO
-    public Integer codigoDespacho;
-
 }

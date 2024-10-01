@@ -1,29 +1,15 @@
 package org.iesvdm.empresa;
 
-public class Tecnico {
-    //Constructor
-    public Tecnico() {
-        this.perfil = perfil;
-    }
-
-    //Atributo
+public class Tecnico extends Operario {
     private String perfil;
 
-    //Getters y Setters
-    public String getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(String perfil) {
+    public Tecnico(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoTaller, String perfil) {
+        super(nombre, apellidos, dni, direccion, telefono, codigoTaller);
         this.perfil = perfil;
     }
 
-    //To String
     @Override
     public String toString() {
-        return "Tecnico{" +
-                "perfil='" + perfil + '\'' +
-                '}';
+        return super.toString() + ", Perfil: " + perfil + " (Técnico)";
     }
-
 }

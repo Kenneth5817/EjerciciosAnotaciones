@@ -1,21 +1,16 @@
 package org.iesvdm.empresa;
 
-public class Operario extends Tecnico{
-    //Getters y Setters
-    public Integer getCodigoTaller() {
-        return codigoTaller;
-    }
 
-    public void setCodigoTaller(Integer codigoTaller) {
-        this.codigoTaller = codigoTaller;
-    }
+    public class Operario extends Empleado {
+        private int codigoTaller;
 
-    //Atributos
-    public Integer codigoTaller;
+        public Operario(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoTaller) {
+            super(nombre, apellidos, dni, direccion, Integer.valueOf(telefono));
+            this.codigoTaller = codigoTaller;
+        }
 
-    //Constructor
-    public Operario(Integer codigoTaller) {
-        super();
-        this.codigoTaller = codigoTaller;
+        @Override
+        public String toString() {
+            return super.toString() + ", Código Taller: " + codigoTaller + " (Operario)";
+        }
     }
-}
