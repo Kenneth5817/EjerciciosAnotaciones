@@ -1,6 +1,9 @@
 package org.iesvdm.empresa;
 
-public class Empleado {
+import org.iesvdm.anotacion.Empleados;
+
+
+public abstract class Empleado{
     //Atributos
     private static String nombre;
     private String apellido;
@@ -67,4 +70,6 @@ public class Empleado {
     public void setTelefono(Integer telefono) {
         this.telefono = telefono;
     }
+
+    private static Empleado tecnico;
 }

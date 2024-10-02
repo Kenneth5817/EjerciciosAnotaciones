@@ -1,6 +1,14 @@
 package org.iesvdm.empresa;
 
-public class Tecnico extends Operario {
+public final class Tecnico extends Operario {
+    //Getters y Setters
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
     private String perfil;
 
     public Tecnico(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoTaller, String perfil) {
@@ -12,4 +20,9 @@ public class Tecnico extends Operario {
     public String toString() {
         return super.toString() + ", Perfil: " + perfil + " (Técnico)";
     }
+
+    public static void main(String[]args){
+        System.out.println("CADENA VACIA");
+    }
+
 }

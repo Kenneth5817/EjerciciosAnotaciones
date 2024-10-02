@@ -1,12 +1,10 @@
 package org.iesvdm.anotacion;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-package org.iesvdm.empresa;
-
+import java.lang.annotation.*;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-@Retention(RetentionPolicy.RUNTIME) // Hacer la anotación disponible en tiempo de ejecución
+@Repeatable(Empleados.class)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface Empleado {
         String nombre();
         String apellidos();
@@ -14,8 +12,8 @@ public @interface Empleado {
         String direccion();
         String telefono();
         String clase();
-        String codigoDespacho() default ""; // Opcional, solo para Directivo
-        String codigoTaller() default "";   // Opcional, solo para Técnico y Oficial
-        String perfil() default "";         // Opcional, solo para Técnico
-        String categoria() default "";      // Opcional, solo para Oficial
+        String codigoDespacho() default ""; // solo para directivo
+        String codigoTaller() default "";// solo para técnico y oficial
+        String perfil() default ""; // solo para técnico
+        String categoria() default "";  // solo para oficial
 }

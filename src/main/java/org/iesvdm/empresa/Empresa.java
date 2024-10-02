@@ -1,13 +1,49 @@
 package org.iesvdm.empresa;
-import org.iesvdm.empresa.Empleado;
-
+import org.iesvdm.anotacion.*;
+import java.lang.annotation.Repeatable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Empresa {
+
+// Anotaciones de empleados
+@org.iesvdm.anotacion.Empleado(
+        nombre = "Juan",
+        apellidos = "Ortega",
+        dni = "930195821P",
+        direccion = "Calle Rio Sena, 24, 1ºC, Mijas",
+        telefono = "981185596",
+        clase = "Directivo",
+        codigoDespacho = "1"
+)
+
+@org.iesvdm.anotacion.Empleado(
+        nombre = "Lucas",
+        apellidos = "García",
+        dni = "938295037S",
+        direccion = "Calle Sánchez 31,2º, Murcia",
+        telefono = "912345678",
+        clase = "Tecnico",
+        codigoTaller = "2",
+        perfil = "Informático"
+)
+@org.iesvdm.anotacion.Empleado(
+        nombre = "Raquel",
+        apellidos = "Pérez",
+        dni = "87654321B",
+        direccion = "Calle Luz 592, Mijas",
+        telefono = "932165432",
+        clase = "Oficial",
+        codigoTaller = "3",
+        categoria = "Electricista"
+)
+
+public class Empresa{
     private String nombre;
     private List<Empleado> empleados;
-
+    private static Empleado directivo;
+    private static Empleado oficial;
+    private static Empleado operario;
+    private static Empleado tecnico;
     public Empresa(String nombre) {
         this.nombre = nombre;
         this.empleados = new ArrayList<>();
@@ -20,32 +56,12 @@ public class Empresa {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Empleados de la Empresa " + nombre + ":\n");
-        for (Empleado e : empleados) {
-            sb.append(e.toString()).append("\n");
+        for (Empleado empleados : empleados) {
+            sb.append(empleados.toString()).append("\n");
         }
         return sb.toString();
     }
 
-    // Anotaciones de empleados
-    @Empleado(
-            nombre = "Amancio", apellidos = "Ortega", dni = "66554433F",
-            direccion = "AV.DIPUTACION S/N, ARTEIXO", telefono = "981185596",
-            clase = "Directivo", codigoDespacho = "1"
-    )
-    private static Empleado directivo;
 
-    @Empleado(
-            nombre = "Carlos", apellidos = "García", dni = "12345678A",
-            direccion = "Calle Falsa 123, Madrid", telefono = "912345678",
-            clase = "Tecnico", codigoTaller = "2", perfil = "Informático"
-    )
-    private static Empleado tecnico;
-
-    @Empleado(
-            nombre = "María", apellidos = "Pérez", dni = "87654321B",
-            direccion = "Calle Verdadera 456, Barcelona", telefono = "932165432",
-            clase = "Oficial", codigoTaller = "3", categoria = "Electricista"
-    )
-    private static Empleado oficial;
 }
 

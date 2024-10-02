@@ -8,7 +8,6 @@ import java.lang.annotation.*;
     public @interface Empleados {
 
         Empleado[] value();
-
     }
 
 

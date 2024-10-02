@@ -1,14 +1,13 @@
 package org.iesvdm.empresa;
 
 import org.iesvdm.anotacion.Empleados;
-
 import java.lang.reflect.Field;
 
 public class CargadorContexto {
 
-    // Método estático que procesa las anotaciones y carga los empleados en la empresa
+    // Usamos método estático que procesa las anotaciones y carga los empleados en la empresa
     public static Empresa cargarEmpleadosDesdeAnotaciones(Class<?> clase) {
-        Empresa empresa = new Empresa("Mi Empresa");
+        Empresa empresa = new Empresa("Tecnologías de comunicación");
 
         try {
             Field[] campos = clase.getDeclaredFields();
@@ -16,7 +15,7 @@ public class CargadorContexto {
             for (Field campo : campos) {
                 if (campo.isAnnotationPresent(Empleados.class)) {
                     Empleado anotacion = (Empleado) campo.getAnnotation(Empleados.class);
-                    Empleado empleado = crearEmpleado(anotacion);
+                    Empleado empleado = crearEmpleado((org.iesvdm.anotacion.Empleado) anotacion);
                     if (empleado != null) {
                         empresa.agregarEmpleado(empleado);
                     }
@@ -29,8 +28,8 @@ public class CargadorContexto {
         return empresa;
     }
 
-    // Crea un empleado según el tipo de anotación
-    private static Empleado crearEmpleado(Empleado anotacion) {
+    // Creamos un empleado según el tipo de anotación
+    private static Empleado crearEmpleado(org.iesvdm.anotacion.Empleado anotacion) {
         switch (anotacion.clase()) {
             case "Directivo":
                 return new Directivo(anotacion.nombre(), anotacion.apellidos(), anotacion.dni(),
