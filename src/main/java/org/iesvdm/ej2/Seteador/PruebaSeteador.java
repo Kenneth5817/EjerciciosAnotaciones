@@ -1,4 +1,4 @@
-package org.iesvdm.seteador;
+package org.iesvdm.ej2.Seteador;
 
 public class PruebaSeteador {
     @Seteador

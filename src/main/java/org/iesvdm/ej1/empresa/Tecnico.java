@@ -1,4 +1,4 @@
-package org.iesvdm.empresa;
+package org.iesvdm.ej1.empresa;
 
 public final class Tecnico extends Operario {
     //Getters y Setters

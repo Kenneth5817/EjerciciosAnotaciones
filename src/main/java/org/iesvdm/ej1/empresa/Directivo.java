@@ -1,4 +1,4 @@
-package org.iesvdm.empresa;
+package org.iesvdm.ej1.empresa;
 
 public class Directivo extends Empleado {
     private int codigoDespacho;

@@ -1,8 +1,4 @@
-package org.iesvdm.empresa;
-
-import org.iesvdm.anotacion.Empleados;
-
-import java.util.List;
+package org.iesvdm.ej2.empresa;
 
 
 public class main {

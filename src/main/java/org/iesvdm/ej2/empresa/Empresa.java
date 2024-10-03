@@ -1,12 +1,11 @@
-package org.iesvdm.empresa;
-import org.iesvdm.anotacion.*;
-import java.lang.annotation.Repeatable;
+package org.iesvdm.ej2.empresa;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 // Anotaciones de empleados
-@org.iesvdm.anotacion.Empleado(
+@org.iesvdm.ej2.anotacion.Empleado(
         nombre = "Juan",
         apellidos = "Ortega",
         dni = "930195821P",
@@ -16,7 +15,7 @@ import java.util.List;
         codigoDespacho = "1"
 )
 
-@org.iesvdm.anotacion.Empleado(
+@org.iesvdm.ej2.anotacion.Empleado(
         nombre = "Lucas",
         apellidos = "García",
         dni = "938295037S",
@@ -26,7 +25,7 @@ import java.util.List;
         codigoTaller = "2",
         perfil = "Informático"
 )
-@org.iesvdm.anotacion.Empleado(
+@org.iesvdm.ej2.anotacion.Empleado(
         nombre = "Raquel",
         apellidos = "Pérez",
         dni = "87654321B",

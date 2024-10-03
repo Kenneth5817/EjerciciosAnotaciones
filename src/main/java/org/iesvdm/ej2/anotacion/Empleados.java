@@ -1,4 +1,4 @@
-package org.iesvdm.anotacion;
+package org.iesvdm.ej2.anotacion;
 
 import java.lang.annotation.*;
 

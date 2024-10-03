@@ -1,7 +1,7 @@
-package org.iesvdm.empresa;
+package org.iesvdm.ej2.empresa;
 
 
-    public class Oficial extends Operario {
+public class Oficial extends Operario {
         private String categoria;
 
         public Oficial(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoTaller, String categoria) {

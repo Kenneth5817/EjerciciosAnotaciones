@@ -1,7 +1,7 @@
-package org.iesvdm.empresa;
+package org.iesvdm.ej2.empresa;
 
 
-    public class Operario extends Empleado {
+public class Operario extends Empleado {
         //Atributo
         private int codigoTaller;
 

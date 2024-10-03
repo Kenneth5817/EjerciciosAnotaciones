@@ -1,5 +1,4 @@
-package org.iesvdm.anotacion;
-import java.lang.annotation.*;
+package org.iesvdm.ej2.anotacion;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,6 +1,4 @@
-package org.iesvdm.empresa;
-
-import org.iesvdm.anotacion.Empleados;
+package org.iesvdm.ej1.empresa;
 
 
 public abstract class Empleado{

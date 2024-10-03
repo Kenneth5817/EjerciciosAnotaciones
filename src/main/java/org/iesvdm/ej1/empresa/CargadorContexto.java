@@ -1,6 +1,6 @@
-package org.iesvdm.empresa;
+package org.iesvdm.ej1.empresa;
 
-import org.iesvdm.anotacion.Empleados;
+import org.iesvdm.ej1.anotacion.Empleados;
 import java.lang.reflect.Field;
 
 public class CargadorContexto {
@@ -15,7 +15,7 @@ public class CargadorContexto {
             for (Field campo : campos) {
                 if (campo.isAnnotationPresent(Empleados.class)) {
                     Empleado anotacion = (Empleado) campo.getAnnotation(Empleados.class);
-                    Empleado empleado = crearEmpleado((org.iesvdm.anotacion.Empleado) anotacion);
+                    Empleado empleado = crearEmpleado((org.iesvdm.ej1.anotacion.Empleado) anotacion);
                     if (empleado != null) {
                         empresa.agregarEmpleado(empleado);
                     }
@@ -29,7 +29,7 @@ public class CargadorContexto {
     }
 
     // Creamos un empleado según el tipo de anotación
-    private static Empleado crearEmpleado(org.iesvdm.anotacion.Empleado anotacion) {
+    private static Empleado crearEmpleado(org.iesvdm.ej1.anotacion.Empleado anotacion) {
         switch (anotacion.clase()) {
             case "Directivo":
                 return new Directivo(anotacion.nombre(), anotacion.apellidos(), anotacion.dni(),
