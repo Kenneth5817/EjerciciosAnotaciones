@@ -1,28 +1,16 @@
 package org.iesvdm.ej2.empresa;
-
-public final class Tecnico extends Operario {
-    //Getters y Setters
-    public String getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
-    }
+public class Tecnico extends Empleado {
+    private int codigoTaller;
     private String perfil;
 
     public Tecnico(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoTaller, String perfil) {
-        super(nombre, apellidos, dni, direccion, telefono, codigoTaller);
+        super(nombre, apellidos, dni, direccion, telefono);
+        this.codigoTaller = codigoTaller;
         this.perfil = perfil;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ", Perfil: " + perfil + " (Técnico)";
+        return "Técnico{" + super.toString() + ", codigoTaller=" + codigoTaller + ", perfil='" + perfil + '\'' + '}';
     }
-
-    public static void main(String[]args){
-        System.out.println("CADENA VACIA");
-    }
-
 }

@@ -7,7 +7,7 @@ public class Operario extends Empleado {
 
         //COnstructores
         public Operario(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoTaller) {
-            super(nombre, apellidos, dni, direccion, Integer.valueOf(telefono));
+            super(nombre, apellidos, dni, direccion, String.valueOf(Integer.valueOf(telefono)));
             this.codigoTaller = codigoTaller;
         }
 

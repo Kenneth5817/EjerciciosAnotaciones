@@ -8,7 +8,7 @@ package org.iesvdm.ej3.clases;
 )
 
 @org.iesvdm.ej3.anotacion.Tarea(
-        título_tarea="Entregar proyecto"
+        título_tarea="Entregar proyecto",
         descripción="Por Classroom",
         dia_semana="Viernes",
         hora="Antes de las 5"

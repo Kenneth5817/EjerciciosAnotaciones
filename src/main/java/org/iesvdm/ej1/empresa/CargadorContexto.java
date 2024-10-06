@@ -5,6 +5,11 @@ import java.lang.reflect.Field;
 
 public class CargadorContexto {
 
+    @Override
+    public String toString() {
+        return "CargadorContexto{}";
+    }
+
     // Usamos método estático que procesa las anotaciones y carga los empleados en la empresa
     public static Empresa cargarEmpleadosDesdeAnotaciones(Class<?> clase) {
         Empresa empresa = new Empresa("Tecnologías de comunicación");

@@ -11,5 +11,4 @@ public @interface Tarea {
      String descripción();
      String dia_semana();
      String hora();
-
 }

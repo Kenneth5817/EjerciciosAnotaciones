@@ -5,7 +5,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Target(ElementType.TYPE)
-
 public @interface AgendaSemana {
     Tarea[] value();
 }
