@@ -6,13 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Agenda {
+        //Creamos una lista donde almacenaremos todas las tareas que haya
         private List<Tarea> tareas;
 
         public Agenda() {
             this.tareas = new ArrayList<>();
         }
 
-        public void cargarTareasDesdeAnotaciones(Class agendaClase) { // Se eliminó <?>
+        //creamos un método para cargar las tareas por hacer usando las anotaciones correspondientes
+        public void cargarTareasDesdeAnotaciones(Class agendaClase) {
             if (agendaClase.isAnnotationPresent(AgendaSemana.class)) {
                 AgendaSemana agendaSemana = (AgendaSemana) agendaClase.getAnnotation(AgendaSemana.class);
                 for (Tarea tarea : agendaSemana.value()) {
@@ -21,6 +23,7 @@ public class Agenda {
             }
         }
 
+        //Mostramos por pantalla las tareas que hay disponibles
         public void mostrarTareas() {
             System.out.println("Tareas de la Agenda:");
             for (Tarea tarea : tareas) {

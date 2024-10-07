@@ -14,7 +14,8 @@ public class main {
             telefono = "981185596",
             codigoDespacho = "1"
     )
-    private static Directivo directivo;
+    private static Directivo directivo1; // Directivo anotado
+
     @Tecnico(
             nombre = "Lucas",
             apellidos = "García",
@@ -24,7 +25,8 @@ public class main {
             codigoTaller = "2",
             perfil = "Informático"
     )
-    private static Tecnico tecnico;
+    private static Tecnico tecnico1; // Técnico anotado
+
     @Oficial(
             nombre = "Raquel",
             apellidos = "Pérez",
@@ -34,27 +36,13 @@ public class main {
             codigoTaller = 3,
             categoria = "Electricista"
     )
-    private static Oficial oficial;
+    private static Oficial oficial1; // Oficial anotado
 
     public static void main(String[] args) {
-        // Cargamos la empresa con los empleados anotados
+        // Cargar la empresa con los empleados anotados
         Empresa empresa = CargadorContexto.cargarEmpleadosDesdeAnotaciones(main.class);
 
-        // Mostramos los diferentes empleados que hay
-        System.out.println(empresa);
-        System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-
-        org.iesvdm.ej1.empresa.Tecnico ejemploTecnico=new org.iesvdm.ej1.empresa.Tecnico("Juan","Bermudez","249503940","Calle Rio Agua","628193713",2,"Técnico");
-        System.out.println(ejemploTecnico);
-
-        org.iesvdm.ej1.empresa.Oficial ejemploOficial=new org.iesvdm.ej1.empresa.Oficial("Pepe","Sanchez", "194035290", "Calle Rio Azucena 39,5º4","044860304",1,"Oficial");
-        System.out.println(ejemploOficial);
-
-        org.iesvdm.ej1.empresa.Tecnico ejemploTecnico2= new org.iesvdm.ej1.empresa.Tecnico("Raquel", "Luque", "93021940", "Calle Manzanilla 3º1", "9305930",3,"Técnico");
-        System.out.println(ejemploTecnico2);
-
-        org.iesvdm.ej1.empresa.Directivo ejemploDirectivo= new org.iesvdm.ej1.empresa.Directivo("Lucas", "Ramirez", "204352422", "Avda. Mijas 43. Bajo B", "492010490",1);
-        System.out.println(ejemploDirectivo);
+        // Mostrar empleados
+        System.out.println(empresa); // Esto imprimirá la lista de empleados en consola
     }
 }
-

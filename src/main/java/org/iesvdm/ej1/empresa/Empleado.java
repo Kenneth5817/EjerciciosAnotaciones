@@ -1,6 +1,4 @@
 package org.iesvdm.ej1.empresa;
-
-
 public abstract class Empleado{
     //Atributos
     private static String nombre;

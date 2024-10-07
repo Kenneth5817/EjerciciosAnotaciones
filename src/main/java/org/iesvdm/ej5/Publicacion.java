@@ -1,9 +1,12 @@
 package org.iesvdm.ej5;
 
+
+import lombok.experimental.SuperBuilder;
+
 @SuperBuilder
-//Clase publicación
-public class Publicacion {
-    //Getters y Setters
+public abstract class Publicacion {
+    protected String titulo;
+
     public String getTitulo() {
         return titulo;
     }
@@ -20,13 +23,11 @@ public class Publicacion {
         this.autor = autor;
     }
 
-    //Atributos
-    protected String titulo;
     protected String autor;
 
-    //Constructor
-    public Publicacion(String titulo, String autor) {
-        this.titulo = titulo;
-        this.autor = autor;
+        public Publicacion(String titulo, String autor) {
+            this.titulo = titulo;
+            this.autor = autor;
+        }
+
     }
-}

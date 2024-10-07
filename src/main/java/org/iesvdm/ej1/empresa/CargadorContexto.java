@@ -11,12 +11,14 @@ public class CargadorContexto {
     }
 
     // Usamos método estático que procesa las anotaciones y carga los empleados en la empresa
+    //Usamos generico ? para que pueda coger cualquier clase
     public static Empresa cargarEmpleadosDesdeAnotaciones(Class<?> clase) {
         Empresa empresa = new Empresa("Tecnologías de comunicación");
 
         try {
             Field[] campos = clase.getDeclaredFields();
 
+            //Vamos recorriendo todos los campos
             for (Field campo : campos) {
                 if (campo.isAnnotationPresent(Empleados.class)) {
                     Empleado anotacion = (Empleado) campo.getAnnotation(Empleados.class);
@@ -39,7 +41,7 @@ public class CargadorContexto {
             case "Directivo":
                 return new Directivo(anotacion.nombre(), anotacion.apellidos(), anotacion.dni(),
                         anotacion.direccion(), anotacion.telefono(),
-                        Integer.parseInt(anotacion.codigoDespacho()));
+                        Integer.parseInt(anotacion.codigoDespacho()), "Directivo");
             case "Tecnico":
                 return new Tecnico(anotacion.nombre(), anotacion.apellidos(), anotacion.dni(),
                         anotacion.direccion(), anotacion.telefono(),
