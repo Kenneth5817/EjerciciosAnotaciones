@@ -22,7 +22,7 @@ public final class Tecnico extends Operario {
     }
 
     public static void main(String[]args){
-        System.out.println("CADENA VACIA");
+        System.out.println("Main de pruebaa ;)");
     }
 
 }

@@ -1,23 +1,24 @@
 package org.iesvdm.ej2.empresa;
-
 import org.iesvdm.ej2.anotacion.Empleado;
 import java.lang.reflect.Field;
-
 public class CargadorContexto {
 
+    //Usamos generico ? para poder hacer referencia a cualquier clase
     public static Empresa cargarEmpleadosDesdeAnotaciones(Class<?> clase) {
         Empresa empresa = new Empresa("Tecnologías de comunicación");
 
         try {
             Field[] campos = clase.getDeclaredFields();
 
+            //Recorreremos campo a campo
             for (Field campo : campos) {
                 if (campo.isAnnotationPresent(Empleado.class)) {
                     Empleado anotacion = campo.getAnnotation(Empleado.class);
                     // Creamos el empleado usando los datos de la anotación
                     org.iesvdm.ej2.empresa.Empleado empleado = crearEmpleado(anotacion);
+                    // Si no se encuentra, agregamos el empleado a la empresa
                     if (empleado != null) {
-                        empresa.agregarEmpleado((Tecnico) empleado);  // Agregamos el empleado a la empresa
+                        empresa.agregarEmpleado((Tecnico) empleado);
                     }
                 }
             }
@@ -28,11 +29,10 @@ public class CargadorContexto {
         return empresa;
     }
 
-    // Crea un empleado según el tipo de anotación
+    // Crearemos un empleado según el tipo de anotación
     private static org.iesvdm.ej2.empresa.Empleado crearEmpleado(Empleado anotacion) {
         switch (anotacion.clase()) {
             case "Directivo":
-                // Crear y devolver una instancia de Directivo
                 return new org.iesvdm.ej2.empresa.Directivo(
                         anotacion.nombre(),
                         anotacion.apellidos(),
@@ -43,7 +43,6 @@ public class CargadorContexto {
                 );
 
             case "Tecnico":
-                // Crear y devolver una instancia de Técnico
                 return new org.iesvdm.ej2.empresa.Tecnico(
                         anotacion.nombre(),
                         anotacion.apellidos(),
@@ -55,7 +54,6 @@ public class CargadorContexto {
                 );
 
             case "Oficial":
-                // Crear y devolver una instancia de Oficial
                 return new org.iesvdm.ej2.empresa.Oficial(
                         anotacion.nombre(),
                         anotacion.apellidos(),
@@ -66,11 +64,8 @@ public class CargadorContexto {
                         anotacion.categoria()
                 );
 
-
             default:
-                return null;  // Si no es un tipo válido, devolvemos null
-
-
+                return null;  // Si no es un tipo válido, se devolverá null;
         }
     }
 }

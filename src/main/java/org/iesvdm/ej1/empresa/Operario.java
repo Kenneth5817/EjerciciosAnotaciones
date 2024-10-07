@@ -5,7 +5,7 @@ package org.iesvdm.ej1.empresa;
         //Atributo
         private int codigoTaller;
 
-        //COnstructores
+        //Constructores
         public Operario(String nombre, String apellidos, String dni, String direccion, String telefono, int codigoTaller) {
             super(nombre, apellidos, dni, direccion, Integer.valueOf(telefono));
             this.codigoTaller = codigoTaller;
