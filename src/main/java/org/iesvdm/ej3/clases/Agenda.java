@@ -15,10 +15,12 @@ public class Agenda {
 
         //creamos un método para cargar las tareas por hacer usando las anotaciones correspondientes
         public void cargarTareasDesdeAnotaciones(Class agendaClase) {
-            if (agendaClase.isAnnotationPresent(AgendaSemana.class)) {
-                AgendaSemana agendaSemana = (AgendaSemana) agendaClase.getAnnotation(AgendaSemana.class);
-                for (Tarea tarea : agendaSemana.value()) {
+            if(agendaClase.isAnnotationPresent(AgendaSemana.class)){
+                AgendaSemana agendaSemana=AgendaSemana.class.getAnnotation(AgendaSemana.class);
+                for(Tarea tarea:agendaSemana.value()){
                     tareas.add(tarea);
+                }if(tareas.isEmpty()){
+                    System.out.println("No se ha encontrado el archivo de tareas");
                 }
             }
         }

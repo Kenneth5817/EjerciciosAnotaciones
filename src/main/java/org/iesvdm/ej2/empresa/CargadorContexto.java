@@ -31,7 +31,7 @@ public class CargadorContexto {
 
     // Crearemos un empleado según el tipo de anotación
     private static org.iesvdm.ej2.empresa.Empleado crearEmpleado(Empleado anotacion) {
-        switch (anotacion.clase()) {
+        switch(anotacion.clase()){
             case "Directivo":
                 return new org.iesvdm.ej2.empresa.Directivo(
                         anotacion.nombre(),

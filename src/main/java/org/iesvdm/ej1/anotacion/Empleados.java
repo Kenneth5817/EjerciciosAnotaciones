@@ -2,8 +2,8 @@ package org.iesvdm.ej1.anotacion;
 
 import java.lang.annotation.*;
 
-    @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
     @Documented
     public @interface Empleados {
 
